@@ -23,6 +23,32 @@
 │        trim : 20.00%/1, 0.00%                       ├────────────────────────┘
 ^C────────────────────────────────────────────────────┘             [cpu: 50%]
 
+            american fuzzy lop 1.96b (afl-fuzz.out)
+
+┌─ process timing ─────────────────────────────────────┬─ overall results ─────┐
+│        run time : 0 days, 0 hrs, 4 min, 10 sec       │  cycles done : 0      │
+│   last new path : 0 days, 0 hrs, 0 min, 0 sec        │  total paths : 153    │
+│ last uniq crash : none seen yet                      │ uniq crashes : 0      │
+│  last uniq hang : none seen yet                      │   uniq hangs : 0      │
+├─ cycle progress ────────────────────┬─ map coverage ─┴───────────────────────┤
+│  now processing : 32 (20.92%)       │    map density : 766 (1.17%)           │
+│ paths timed out : 0 (0.00%)         │ count coverage : 1.37 bits/tuple       │
+├─ stage progress ────────────────────┼─ findings in depth ────────────────────┤
+│  now trying : havoc                 │ favored paths : 62 (40.52%)            │
+│ stage execs : 6996/40.0k (17.49%)   │  new edges on : 70 (45.75%)            │
+│ total execs : 743k                  │ total crashes : 0 (0 unique)           │
+│  exec speed : 2670/sec              │   total hangs : 0 (0 unique)           │
+├─ fuzzing strategy yields ───────────┴───────────────┬─ path geometry ────────┤
+│   bit flips : 0/632, 0/614, 0/578                   │    levels : 3          │
+│  byte flips : 0/79, 0/61, 0/26                      │   pending : 136        │
+│ arithmetics : 1/4399, 0/1306, 0/19                  │  pend fav : 45         │
+│  known ints : 0/407, 0/1575, 0/1141                 │ own finds : 152        │
+│  dictionary : 0/0, 0/0, 0/0                         │  imported : n/a        │
+│       havoc : 148/725k, 0/0                         │  variable : n/a        │
+│        trim : 27.27%/7, 0.00%                       ├────────────────────────┘
+^C────────────────────────────────────────────────────┘             [cpu: 50%]
+
+
 
 Filename                                        Regions    Missed Regions     Cover   Functions  Missed Functions  Executed       Lines      Missed Lines     Cover
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
