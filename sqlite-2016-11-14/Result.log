@@ -1,0 +1,37 @@
+            american fuzzy lop 1.96b (afl-fuzz.out)
+
+┌─ process timing ─────────────────────────────────────┬─ overall results ─────┐
+│        run time : 0 days, 0 hrs, 2 min, 2 sec        │  cycles done : 0      │
+│   last new path : 0 days, 0 hrs, 0 min, 6 sec        │  total paths : 136    │
+│ last uniq crash : none seen yet                      │ uniq crashes : 0      │
+│  last uniq hang : none seen yet                      │   uniq hangs : 0      │
+├─ cycle progress ────────────────────┬─ map coverage ─┴───────────────────────┤
+│  now processing : 24 (17.65%)       │    map density : 762 (1.16%)           │
+│ paths timed out : 0 (0.00%)         │ count coverage : 1.35 bits/tuple       │
+├─ stage progress ────────────────────┼─ findings in depth ────────────────────┤
+│  now trying : havoc                 │ favored paths : 54 (39.71%)            │
+│ stage execs : 25.6k/160k (16.00%)   │  new edges on : 73 (53.68%)            │
+│ total execs : 354k                  │ total crashes : 0 (0 unique)           │
+│  exec speed : 355.6/sec             │   total hangs : 0 (0 unique)           │
+├─ fuzzing strategy yields ───────────┴───────────────┬─ path geometry ────────┤
+│   bit flips : 0/224, 0/215, 0/197                   │    levels : 3          │
+│  byte flips : 0/28, 0/19, 0/2                       │   pending : 128        │
+│ arithmetics : 0/1563, 0/469, 0/0                    │  pend fav : 46         │
+│  known ints : 0/128, 0/478, 0/87                    │ own finds : 135        │
+│  dictionary : 0/0, 0/0, 0/0                         │  imported : n/a        │
+│       havoc : 129/325k, 0/0                         │  variable : n/a        │
+│        trim : 20.00%/1, 0.00%                       ├────────────────────────┘
+^C────────────────────────────────────────────────────┘             [cpu: 50%]
+
+
+Filename                                        Regions    Missed Regions     Cover   Functions  Missed Functions  Executed       Lines      Missed Lines     Cover
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Fuzzer/afl/afl_driver.cpp                           114                82    28.07%          10                 6    40.00%         210               130    38.10%
+fuzz_AFL/Result/sqlite-2016-11-14/ossfuzz.c          21                 7    66.67%           3                 2    33.33%          60                 9    85.00%
+fuzz_AFL/Result/sqlite-2016-11-14/sqlite3.c       39414             37280     5.41%        1900              1699    10.58%       70117             66348     5.38%
+
+Files which contain no functions:
+fuzz_AFL/Result/sqlite-2016-11-14/sqlite3.h           0                 0         -           0                 0         -           0                 0         -
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                             39549             37369     5.51%        1913              1707    10.77%       70387             66487     5.54%
+
