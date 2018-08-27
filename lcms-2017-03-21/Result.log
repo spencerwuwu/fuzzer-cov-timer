@@ -1,0 +1,60 @@
+            american fuzzy lop 1.96b (afl-fuzz.out)
+
+┌─ process timing ─────────────────────────────────────┬─ overall results ─────┐
+│        run time : 0 days, 0 hrs, 1 min, 21 sec       │  cycles done : 13     │
+│   last new path : 0 days, 0 hrs, 0 min, 25 sec       │  total paths : 3      │
+│ last uniq crash : none seen yet                      │ uniq crashes : 0      │
+│  last uniq hang : none seen yet                      │   uniq hangs : 0      │
+├─ cycle progress ────────────────────┬─ map coverage ─┴───────────────────────┤
+│  now processing : 1 (33.33%)        │    map density : 51 (0.08%)            │
+│ paths timed out : 0 (0.00%)         │ count coverage : 1.00 bits/tuple       │
+├─ stage progress ────────────────────┼─ findings in depth ────────────────────┤
+│  now trying : splice 8              │ favored paths : 2 (66.67%)             │
+│ stage execs : 550/750 (73.33%)      │  new edges on : 3 (100.00%)            │
+│ total execs : 228k                  │ total crashes : 0 (0 unique)           │
+│  exec speed : 2782/sec              │   total hangs : 0 (0 unique)           │
+├─ fuzzing strategy yields ───────────┴───────────────┬─ path geometry ────────┤
+│   bit flips : 0/2064, 0/2061, 0/2055                │    levels : 3          │
+│  byte flips : 0/258, 0/33, 0/32                     │   pending : 0          │
+│ arithmetics : 0/1900, 0/675, 0/104                  │  pend fav : 0          │
+│  known ints : 0/182, 0/833, 0/1383                  │ own finds : 2          │
+│  dictionary : 0/0, 0/0, 0/0                         │  imported : n/a        │
+│       havoc : 2/191k, 0/24.5k                       │  variable : n/a        │
+│        trim : 23.35%/112, 84.85%                    ├────────────────────────┘
+^C────────────────────────────────────────────────────┘             [cpu: 50%]
+
+
+
+Filename                                                         Regions    Missed Regions     Cover   Functions  Missed Functions  Executed       Lines      Missed Lines     Cover
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Fuzzer/afl/afl_driver.cpp                                            114                82    28.07%          10                 6    40.00%         210               130    38.10%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmsalpha.c                 190               190     0.00%          32                32     0.00%         351               351     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmscnvrt.c                 520               520     0.00%          22                22     0.00%         879               879     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmserr.c                   208               176    15.38%          39                27    30.77%         432               349    19.21%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmsgamma.c                 526               526     0.00%          33                33     0.00%        1055              1055     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmsgmt.c                   227               227     0.00%           8                 8     0.00%         459               459     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmshalf.c                    2                 2     0.00%           2                 2     0.00%          25                25     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmsintrp.c                 567               567     0.00%          29                29     0.00%        1288              1288     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmsio0.c                   750               695     7.33%          81                72    11.11%        1599              1435    10.26%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmsio1.c                   495               495     0.00%          24                24     0.00%         850               850     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmslut.c                   725               725     0.00%          75                75     0.00%        1424              1424     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmsmtrx.c                  110               110     0.00%          13                13     0.00%          98                98     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmsnamed.c                 449               449     0.00%          42                42     0.00%         747               747     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmsopt.c                   960               960     0.00%          43                43     0.00%        1587              1587     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmspack.c                 1180              1180     0.00%         125               125     0.00%        2232              2232     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmspcs.c                   381               381     0.00%          42                42     0.00%         688               688     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmsplugin.c                367               356     3.00%          42                39     7.14%         721               686     4.85%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmssamp.c                  282               282     0.00%           6                 6     0.00%         434               434     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmstypes.c                3777              3777     0.00%         183               183     0.00%        4327              4327     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmsvirt.c                  534               534     0.00%          31                31     0.00%         960               960     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmswtpnt.c                  75                75     0.00%           9                 9     0.00%         220               220     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/cmsxform.c                 448               448     0.00%          44                44     0.00%         998               998     0.00%
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/src/lcms2_internal.h            17                15    11.76%          11                 9    18.18%          49                43    12.24%
+fuzz_AFL/Result/lcms-2017-03-21/cms_transform_fuzzer.cc               34                31     8.82%           1                 0   100.00%          43                40     6.98%
+
+Files which contain no functions:
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/include/lcms2.h                  0                 0         -           0                 0         -           0                 0         -
+fuzz_AFL/Result/lcms-2017-03-21/BUILD/include/lcms2_plugin.h           0                 0         -           0                 0         -           0                 0         -
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                              12938             12803     1.04%         947               916     3.27%       21676             21305     1.71%
+
